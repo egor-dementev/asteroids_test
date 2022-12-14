@@ -1,5 +1,4 @@
-﻿using System;
-using AsteroidsTest.GameScene.Data;
+﻿using AsteroidsTest.GameScene.Data;
 using UnityEngine;
 
 namespace AsteroidsTest.GameScene.Runtime
@@ -12,7 +11,6 @@ namespace AsteroidsTest.GameScene.Runtime
         private Transform self;
         private Vector3 speed;
 
-        public Transform Transform => self;
         public Vector3 Position
         {
             get => self.position;

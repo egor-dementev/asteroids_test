@@ -19,7 +19,12 @@ namespace AsteroidsTest.GameScene
             CameraSizeDoubled = CameraSize * 2;
         }
 
-        public static bool IsOffScreen(Vector3 position, out Vector3 inScreenPosition)
+        public static bool IsOffScreen(Vector3 position, float offset = 0)
+        {
+            return Mathf.Abs(position.x) - offset > CameraSize.x || Mathf.Abs(position.y) - offset > CameraSize.y;
+        }
+
+        public static bool TryGetInScreenPosition(Vector3 position, out Vector3 inScreenPosition)
         {
             inScreenPosition = position;
             var isOffScreen = false;

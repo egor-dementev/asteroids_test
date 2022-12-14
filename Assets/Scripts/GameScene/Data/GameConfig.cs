@@ -12,6 +12,7 @@
         public float LaserChargeTime { get; private set; }
         
         // ### Objects settings ###
+        public int AsteroidSpawnDelay { get; private set; }
         public int AsteroidPartsCountOnDestroy { get; private set; }
         public float AsteroidPartsSpeedMulti { get; private set; }
         public float AsteroidMinSpeed { get; private set; }
@@ -30,6 +31,7 @@
                 LaserMaxChargesCount = 3,
                 LaserChargeTime = 5f,
                 
+                AsteroidSpawnDelay = 2,
                 AsteroidPartsCountOnDestroy = 3,
                 AsteroidPartsSpeedMulti = 2f,
                 AsteroidMinSpeed = 1,

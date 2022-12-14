@@ -52,5 +52,10 @@ namespace AsteroidsTest.GameScene.Runtime
             gameplayController.GameOver();
             gameOverWindow.Show(GameModel.Current.Score, InitNewGame);
         }
+
+        private void OnApplicationQuit()
+        {
+            gameplayController.GameOver();
+        }
     }
 }

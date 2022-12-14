@@ -1,18 +1,32 @@
-﻿using AsteroidsTest.GameScene.Data;
+﻿using System;
+using AsteroidsTest.GameScene.Data;
 using UnityEngine;
 
 namespace AsteroidsTest.GameScene.Runtime
 {
-    public class PlayerShip : MonoBehaviour
+    public class Ship : MonoBehaviour
     {
         [SerializeField]
         private ShipOrientation orientation;
 
-        private Vector2 speed;
-        
+        private Transform self;
+        private Vector3 speed;
+
+        public Transform Transform => self;
+        public Vector3 Position
+        {
+            get => self.position;
+            set => self.position = value;
+        }
+
+        private void Awake()
+        {
+            self = transform;
+        }
+
         public void OnUpdate(bool isAccelerating)
         {
-            var delta = Vector2.zero;
+            var delta = Vector3.zero;
 
             if (isAccelerating)
             {
@@ -39,9 +53,8 @@ namespace AsteroidsTest.GameScene.Runtime
                 speed = Vector2.zero;
                 return;
             }
-           
-            // write player coords to model
-            GameModel.Current.PlayerCoords += speed * Time.deltaTime;
+
+            self.position += speed * Time.deltaTime;
         }
     }
 }

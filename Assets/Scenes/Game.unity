@@ -290,6 +290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countDownWindow: {fileID: 1108979697}
   gameOverWindow: {fileID: 123979733}
+  mainCamera: {fileID: 1238053071}
   gameplayController: {fileID: 561496181}
 --- !u!4 &561496180
 Transform:
@@ -322,6 +323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bgScroller: {fileID: 1722827479}
   ship: {fileID: 192612910}
+  spawners: []
 --- !u!1 &621667127
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,9 +555,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1722827476}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 20}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.0000019073486, z: 20.000002}
+  m_LocalScale: {x: 1, y: 1.0000002, z: 1.0000002}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 561496180}
@@ -626,6 +628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1722827478}
+  speed: {x: 0.1, y: 0.05}
 --- !u!1001 &294383098210441637
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -635,7 +638,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 294383098128061320, guid: 2c5452367f920e646828948f58cddde6, type: 3}
       propertyPath: m_Name
-      value: PlayerShip
+      value: Ship
       objectReference: {fileID: 0}
     - target: {fileID: 294383098128061322, guid: 2c5452367f920e646828948f58cddde6, type: 3}
       propertyPath: m_RootOrder

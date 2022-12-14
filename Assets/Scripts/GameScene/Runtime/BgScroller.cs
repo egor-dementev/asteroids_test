@@ -6,6 +6,8 @@ namespace AsteroidsTest.GameScene.Runtime
     {
         [SerializeField]
         private SpriteRenderer spriteRenderer;
+        [SerializeField]
+        private Vector2 speed = new Vector2(.1f, .05f);
 
         private Material mat;
         
@@ -20,14 +22,9 @@ namespace AsteroidsTest.GameScene.Runtime
             spriteRenderer.material = mat;
         }
 
-        public void SetOffset(Vector2 offset)
+        private void Update()
         {
-            spriteRenderer.material.mainTextureOffset = offset;
-        }
-
-        public void ResetOffset()
-        {
-            spriteRenderer.material.mainTextureOffset = Vector2.zero;
+            spriteRenderer.material.mainTextureOffset += speed * Time.deltaTime;
         }
     }
 }

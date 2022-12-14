@@ -13,12 +13,16 @@ namespace AsteroidsTest.GameScene.Runtime
         private GameOverWindow gameOverWindow;
         [Header("Gameplay")]
         [SerializeField]
+        private Camera mainCamera;
+        [SerializeField]
         private GameplayController gameplayController; 
 
         private void Awake()
         {
             GameConfig.Current = GameConfig.DefaultConfig();
             GameModel.Current = GameModel.New();
+            
+            Utils.SetCameraSize(mainCamera.orthographicSize);
         }
 
         private void Start()

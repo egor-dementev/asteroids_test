@@ -1,5 +1,4 @@
-﻿using AsteroidsTest.GameScene.Data;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace AsteroidsTest.GameScene.Runtime
 {
@@ -8,13 +7,14 @@ namespace AsteroidsTest.GameScene.Runtime
         [SerializeField]
         private BgScroller bgScroller;
         [SerializeField]
-        private PlayerShip ship;
+        private Ship ship;
+        [SerializeField]
+        private Transform[] spawners;
 
         private bool isInputAvailable;
 
         public void Init()
         {
-            bgScroller.ResetOffset();
         }
         
         public void StartGame()
@@ -32,9 +32,11 @@ namespace AsteroidsTest.GameScene.Runtime
             if (!isInputAvailable)
                 return;
 
-            // imitate ship movement by offsetting background
+            // move ship
             ship.OnUpdate(Input.GetKey(KeyCode.Space));
-            bgScroller.SetOffset(GameModel.Current.PlayerCoords);
+
+            if (Utils.IsOffScreen(ship.Position, out var inScreenPosition))
+                ship.Position = inScreenPosition;
         }
     }
 }

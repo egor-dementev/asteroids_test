@@ -6,7 +6,6 @@ namespace AsteroidsTest.GameScene.Data
     {
         public static GameModel Current;
 
-        public Vector2 PlayerCoords;
         public int Score { get; private set; }
 
         public static GameModel New()
@@ -19,7 +18,6 @@ namespace AsteroidsTest.GameScene.Data
 
         public void Reset()
         {
-            PlayerCoords = Vector2.zero;
             Score = 0;
         }
 

@@ -6,7 +6,7 @@ namespace AsteroidsTest.GameScene.Runtime
     {
         private Transform self;
 
-        public Vector2 MoveDirection { get; private set; }
+        public Vector3 MoveDirection { get; private set; }
 
         private void Awake()
         {
@@ -17,7 +17,7 @@ namespace AsteroidsTest.GameScene.Runtime
         {
             var mousePos = Input.mousePosition;
             mousePos.z = self.position.z;
-            mousePos -= Utils.ScreenOffset;
+            mousePos -= Utils.ScreenHalf;
 
             MoveDirection = (mousePos - self.position).normalized;
 
